@@ -238,7 +238,7 @@ X:X region as for the A:A region.
 
 To search the space of QTL models, we use forward selection up to a
 model with 10 QTL, followed by backward elimination to
-the null model. At each step, of forward selection, we scan the genome
+the null model. At each step of forward selection, we scan the genome
 for an additional additive QTL, and then for each QTL in the current
 model, we scan the genome for a QTL that interacts with that QTL. We
 step to the model that gives the largest penalized LOD score, even if
@@ -269,7 +269,7 @@ conducted a computer simulation. We compare the Type I error rate and
 power, including the relative rates of Type I errors on autosomes
 versus the X chromosome.
 
-We consider a backcross with 250 individuals, splitted evenly between male and female, using a genome modeled
+We consider a backcross with 250 individuals, split evenly between males and females, using a genome modeled
 after the mouse, with markers at a 10~cM spacing. We considered a
 variety of small QTL models: a single QTL, two additive QTL, or three
 additive QTL all on autosomes; a single QTL or two additive QTL on the
@@ -282,7 +282,7 @@ version 1.42-8 \citep{Broman2002} and R version 3.5.3 \citep{R}.
 
 %The degree of freedom is in Table~\ref{tab:bcdf}.
 First we use simulation to derive the various penalties for the XeqA
-and XneA methods. For the XneA methods, we performed 3,000 simulation replicates for the A:A region, 12,000 replicates for the A:X region, and 300,000 replicates for the X:X region. The estimated penalties is in Table~\ref{tab:penalties}.
+and XneA methods. For the XneA methods, we performed 1,056 simulation replicates for the A:A region, 8,544 replicates for the A:X region, and 276,192 replicates for the X:X region. The estimated penalties are shown in Table~\ref{tab:penalties}.
 These penalties are used to perform stepwise model selection.
 The results, based on 1,000 simulations, are displayed in
 Figure~\ref{fig:sim_result}.
@@ -296,7 +296,7 @@ simulated model has two main QTL on X chromosome.
 Figure~\ref{fig:sim_result}B shows the log$_2$ ratio of Type I error
 rates, for the autosomes versus the X chromosome. The proposed XneA
 method serves to balance type I error rates on the autosomes and the X
-chromosome, while the XeqA shows increased type I error on the X
+chromosome, while the XeqA method shows increased type I error on the X
 chromosome.
 
 Figure~\ref{fig:sim_result}C shows the type I error rate for
