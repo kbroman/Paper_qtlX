@@ -1,5 +1,7 @@
 ## Treatment of the X chromosome in mapping multiple quantitative trait loci
 
+[![DOI](https://zenodo.org/badge/294509467.svg)](https://zenodo.org/badge/latestdoi/294509467)
+
 Repository with the source, simulations, and analyses for the
 above-titled manuscript by Quoc Tran and [Karl Broman](https://kbroman.org).
 
