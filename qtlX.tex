@@ -154,11 +154,32 @@ implemented in the widely-used package R/qtl \citep{Broman2003}.
 
 We consider the case of a backcross or an intercross derived from two
 inbred lines and of a continuously varying quantitative trait with
-normally distributed residual variation. \citet{Broman2002} introduced
-the use of a penalized LOD score criterion for multiple-QTL model
-selection in this context. They focused on additive QTL models and
-placed a linear penalty on the number of QTL. Their criterion was
+normally distributed residual variation. We focus on Haley-Knott
+regression \citep{Haley1992}, which handles missing genotype
+information by considering a regression of the phenotype on QTL
+genotype probabilities, calculated conditional on the available marker
+genotypes \citep[see][]{Broman2009}. Thus we consider models of the
+form $y = X\beta + \epsilon$ where the covariate matrix $X$ includes
+an intercept and, in a backcross, includes one column for each autosomal
+QTL, while in an intercross, it includes two columns for each autosomal
+QTL. For X chromosome QTL, we allow for QTL $\times$ sex interactions,
+for example allowing that male hemizygotes may have different average
+phenotypes than female homozygotes. In an intercross with both sexes
+and both cross directions, we would include sex and cross-direction
+covariates \citep[see][]{Broman2006}, plus two columns of 0/1
+indicators for the female genotypes and one such column for the male
+genotypes. For models with epistatic interactions, we impose hierarchy
+on the models, with the inclusion of a pairwise interaction requiring
+the inclusion of both corresponding main effects.
+
+\citet{Broman2002} introduced the use of a penalized LOD score
+criterion for multiple-QTL model selection in this context. They
+focused on additive QTL models and placed a linear penalty on the
+number of QTL. Their criterion was
+
 $$\pLOD(\gamma) = \LOD(\gamma) - T_m|\gamma|_m$$
+
+\noindent
 where $\gamma$ denotes an additive QTL model, $|\gamma|_m$ is the
 number of QTL in the model, and $\LOD(\gamma)$ is the log$_{10}$
 likelihood ratio for the model $\gamma$ versus the null model of no
@@ -461,7 +482,8 @@ to the general statistical software R \citep{R}.
 \section*{ACKNOWLEDGMENTS}
 
 This work was supported in part by National Institutes of Health
-grants R01GM074244 and R01GM070683 (to K.W.B.).
+grants R01GM074244 and R01GM070683 (to K.W.B.). The authors thank two
+anonymous reviewers for comments to improve the manuscript.
 
 
 \clearpage
@@ -652,8 +674,10 @@ Q2:Q4 & 7@18.6:10@24.0 & 7:10 &  & 7.0\\
 
 \vspace{0cm}
 
-\caption{LOD profile of output models from XeqA and XneA methods
-  on probe 10003837305.
+\caption{LOD profile of output models from XeqA (black) and XneA
+  (green) methods on probe 10003837305. Note that there are two black
+  curves on chromosome 7, because the XeqA method identified two QTL
+  on that chromosome.
 \label{fig:probe305}}
 \end{figure}
 
