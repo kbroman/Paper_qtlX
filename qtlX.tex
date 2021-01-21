@@ -168,7 +168,7 @@ phenotypes than female homozygotes. In an intercross with both sexes
 and both cross directions, we would include sex and cross-direction
 covariates \citep[see][]{Broman2006}, plus two columns of 0/1
 indicators for the female genotypes and one such column for the male
-genotypes. For models with epistatic interactions, we impose hierarchy
+genotypes. For models with epistatic interactions, we impose a hierarchy
 on the models, with the inclusion of a pairwise interaction requiring
 the inclusion of both corresponding main effects.
 
@@ -241,8 +241,8 @@ regions. For region $i$, we use $\alpha_i = 1 - (1-\alpha)^{S_i/S}$,
 where $S_{AA} = L_A^2/2$, $S_{AX} = L_AL_X$, $S_{XX} = L_X^2/2$, and
 $S = S_{AA} + S_{AX} + S_{XX}$.
 
-In the following, we denote the method of \citet{Manichaikul2009}
-treating the autosomes and X chromosome the same as XeqA (for X
+In the following, we denote the method of \citet{Manichaikul2009},
+treating the autosomes and X chromosome the same, as XeqA (for X
 chromosome and autosomes treated equally), and the proposed approach,
 treating the X chromosome separately, as XneA.
 
@@ -299,7 +299,7 @@ QTL with one on an autosome and one on the X chromosome. In all cases,
 the percent phenotypic variance explained by each QTL was
 approximately 8\%. We used Haley-Knott regression \citep{Haley1992}
 and stepwise model selection. Analyses were performed with R/qtl
-version 1.42-8 \citep{Broman2002} and R version 3.5.3 \citep{R}.
+version 1.42-8 \citep{Broman2003} and R version 3.5.3 \citep{R}.
 
 %The degree of freedom is in Table~\ref{tab:bcdf}.
 First we use simulation to derive the various penalties for the XeqA
@@ -337,7 +337,7 @@ control the Type I error rate on the X chromosome.
 
 To illustrate our method regarding the X chromosome in multiple-QTL
 model selection, we consider the eQTL data of \citet{Tian2016}. The
-data concern a mouse intercross between the diabetes-resistance strain
+data concern a mouse intercross between the diabetes-resistant strain
 C57BL/6J (abbreviated B6) and the diabetes-susceptible strain
 BTBR $T^{+} tf$/J (abbreviated BTBR). There
 were approximately 500 F$_2$ offspring, all genetically obese through
@@ -364,9 +364,10 @@ region, and 335,328 replicates for the X:X region. The numbers of
 replicates were chosen based on the areas of the corresponding
 regions, with $L_A/L_X \approx 19$. Penalties using $\alpha=0.05$ are
 displayed in Table~\ref{tab:penalties}.
-Note that the number of degrees of freedom for the main-effect QTL test on
-the X chromosome, $6$, is less than that on the autosomes, $8$, and so the
-main effect penalty on the X chromosome is lower. The interaction
+The main effect penalty on the X chromosome is lower than that on
+the autosomes, because of reduced recombination.
+(Each F$_2$ mouse has a single recombinant X chromosome.)
+The interaction
 penalty for two QTL on the X chromosome is lower than the heavy
 interaction penalty for two QTL on autosomes, but the
 penalty for interactions between autosomal and X chromosome QTL is
